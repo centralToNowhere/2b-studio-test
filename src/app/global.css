@@ -1,0 +1,130 @@
+:root {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  color-scheme: light;
+  --bg: #f6f8fa;
+  --panel: #fff;
+  --text: #20303c;
+  --muted: #74808c;
+  --border: #e5e9ed;
+  --hover: #f0f4f5;
+  --accent: #16786b;
+  --accent-hover: #106357;
+  --accent-soft: #e7f3ef;
+  --danger: #bf4845;
+  --danger-bg: #fff0ef;
+  --danger-border: #f2cfcd;
+  --radius: 8px;
+  --radius-lg: 14px;
+  --control: 40px;
+  --control-padding-inline: 12px;
+  --control-icon-offset: var(--control-padding-inline);
+  --control-icon-size: 16px;
+  --space: 8px;
+  --shadow: 0 20px 80px #0e2b3429;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #111b23;
+  --panel: #192630;
+  --text: #e1e9ef;
+  --muted: #9baab5;
+  --border: #2c3b46;
+  --hover: #23343e;
+  --accent: #218f7e;
+  --accent-hover: #29a08d;
+  --accent-soft: #1c3a35;
+  --danger: #ff9a91;
+  --danger-bg: #3e282c;
+  --danger-border: #694047;
+  --shadow: 0 20px 80px #0006;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent);
+}
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #49a99880;
+  outline-offset: 3px;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  min-height: var(--control);
+  padding: 10px var(--control-padding-inline);
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+textarea {
+  min-height: 116px;
+  resize: vertical;
+  line-height: 1.6;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+button {
+  font-family: inherit;
+}
+::selection {
+  background: #93d5c780;
+}
+svg {
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

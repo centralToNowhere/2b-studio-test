@@ -1,0 +1,323 @@
+.shell {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr);
+  min-height: 100dvh;
+}
+.sidebar {
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 30px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+}
+.brand {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  padding: 0 10px;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -1px;
+}
+.brand > span {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+}
+.brand small {
+  display: block;
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.navLabel {
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 50px 14px 16px;
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 650;
+}
+.sidebarBottom {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  min-width: 0;
+  padding: 0 8px;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ede9dd;
+  color: #7d7354;
+  font-size: 11px;
+  font-weight: 700;
+}
+.user > div {
+  min-width: 0;
+}
+.user strong {
+  display: block;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+.user small {
+  font-size: 10px;
+  color: var(--muted);
+  display: block;
+  margin-top: 5px;
+}
+.sidebarBottom > button {
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 12px;
+}
+.workspace {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  height: 76px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel);
+  padding: 0 36px;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.breadcrumb strong {
+  font-weight: 500;
+  color: var(--text);
+}
+.collapseButton {
+  background: none;
+  border: 0;
+  padding: 4px;
+  display: flex;
+  cursor: pointer;
+  color: var(--muted);
+  margin-right: 10px;
+}
+.main {
+  padding: 40px 40px 50px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  flex: 1;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 40px;
+  font-size: 9px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  z-index: 200;
+  padding: 12px;
+  background: var(--panel);
+  border: 2px solid var(--accent);
+}
+.skip:focus {
+  top: 12px;
+}
+.collapsed {
+  grid-template-columns: 78px minmax(0, 1fr);
+}
+.collapsed .sidebar {
+  padding: 28px 12px 20px;
+}
+.collapsed .brand {
+  padding: 0;
+  justify-content: center;
+}
+.collapsed .brand > div,
+.collapsed .navLabel,
+.collapsed .navItem span,
+.collapsed .user,
+.collapsed .sidebarBottom > button span {
+  display: none;
+}
+.collapsed nav {
+  margin-top: 50px;
+}
+.collapsed .navItem {
+  justify-content: center;
+}
+.collapsed .sidebarBottom > button {
+  justify-content: center;
+}
+@media (min-width: 1280px) {
+  .main {
+    padding: 44px 48px 60px;
+  }
+  .header {
+    padding: 0 44px;
+  }
+}
+@media (max-width: 1023px) {
+  .shell {
+    grid-template-columns: 78px minmax(0, 1fr);
+  }
+  .sidebar {
+    padding: 28px 12px 20px;
+  }
+  .brand {
+    padding: 0;
+    justify-content: center;
+  }
+  .brand > div,
+  .navLabel,
+  .navItem span,
+  .user,
+  .sidebarBottom > button span {
+    display: none;
+  }
+  .sidebar nav {
+    margin-top: 50px;
+  }
+  .navItem,
+  .sidebarBottom > button {
+    justify-content: center;
+  }
+  .collapseButton {
+    display: none;
+  }
+  .header {
+    padding: 0 24px;
+  }
+  .main {
+    padding: 28px 24px;
+  }
+  .footer {
+    padding: 18px 24px;
+  }
+}
+@media (max-width: 767px) {
+  .shell,
+  .collapsed {
+    display: block;
+  }
+  .sidebar {
+    position: static;
+    height: 64px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    gap: 22px;
+  }
+  .brand > span {
+    height: 32px;
+    width: 32px;
+  }
+  .sidebar nav,
+  .collapsed nav {
+    margin: 0;
+  }
+  .navItem {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  .navItem span {
+    display: inline;
+  }
+  .sidebarBottom {
+    margin: 0 0 0 auto;
+    padding: 0;
+    border: 0;
+  }
+  .sidebarBottom > button {
+    padding: 8px;
+    min-height: 32px;
+  }
+  .header {
+    height: 56px;
+    padding: 0 20px;
+  }
+  .breadcrumb {
+    gap: 8px;
+    font-size: 10px;
+  }
+  .main {
+    padding: 26px 20px;
+  }
+  .footer {
+    padding: 16px 20px;
+    gap: 10px;
+  }
+  .collapsed .sidebar {
+    padding: 0 20px;
+  }
+  .collapsed .navItem span {
+    display: inline;
+  }
+}
+@media (max-width: 639px) {
+  .breadcrumb > span {
+    display: none;
+  }
+  .breadcrumb > svg {
+    display: none;
+  }
+  .main {
+    padding: 24px 16px;
+  }
+  .footer span:last-child {
+    display: none;
+  }
+  .header {
+    padding: 0 16px;
+  }
+}
